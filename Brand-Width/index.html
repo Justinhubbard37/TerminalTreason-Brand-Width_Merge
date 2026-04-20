@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brand-Width // Marketing_OS</title>
+    <script>
+      // Polyfill for process.env in browser environment
+      window.process = {
+        env: {
+          // This prevents ReferenceError when accessing process.env.API_KEY
+          // The actual key should be set in the Settings UI or injected via build tools if available
+          API_KEY: ''
+        }
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              graphite: {
+                50: '#f1f1f4',
+                100: '#e3e2e9',
+                200: '#c7c6d2',
+                300: '#aba9bc',
+                400: '#8e8da5',
+                500: '#72708f',
+                600: '#5b5a72',
+                700: '#454356',
+                800: '#2e2d39',
+                900: '#17161d',
+                950: '#101014',
+              },
+              'cloudy-sky': {
+                50: '#eaf2fa',
+                100: '#d6e4f5',
+                200: '#adcaeb',
+                300: '#84afe1',
+                400: '#5b95d7',
+                500: '#327acd',
+                600: '#2862a4',
+                700: '#1e497b',
+                800: '#143152',
+                900: '#0a1829',
+                950: '#07111d',
+              },
+              'azure-mist': {
+                50: '#eaf8fb',
+                100: '#d4f1f7',
+                200: '#aae3ee',
+                300: '#7fd5e6',
+                400: '#55c7dd',
+                500: '#2ab8d5',
+                600: '#2294aa',
+                700: '#196f80',
+                800: '#114a55',
+                900: '#08252b',
+                950: '#061a1e',
+              },
+              'mint-leaf': {
+                50: '#e9fbf6',
+                100: '#d3f8ed',
+                200: '#a8f0dc',
+                300: '#7ce9ca',
+                400: '#51e1b8',
+                500: '#25daa7',
+                600: '#1eae85',
+                700: '#168364',
+                800: '#0f5743',
+                900: '#072c21',
+                950: '#051f17',
+              }
+            },
+            fontFamily: {
+              mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace'],
+              sans: ['ui-sans-serif', 'system-ui', '-apple-system', "Segoe UI", 'Roboto', "Helvetica Neue", 'Arial', "Noto Sans", 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Brand-Width Graphite Gradient */
+      body {
+        background-color: #363543;
+        background: linear-gradient(90deg, hsla(244, 12%, 24%, 1) 60%, hsla(240, 13%, 41%, 1) 100%);
+        background-size: cover;
+        background-attachment: fixed;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #17161d;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #5b5a72;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #327acd;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/client": "https://esm.sh/react-dom@^19.2.3/client",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "@google/genai": "https://esm.sh/@google/genai"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="text-azure-mist-50 h-screen overflow-hidden antialiased bg-graphite-900 selection:bg-cloudy-sky-500 selection:text-white">
+    <div id="root" class="h-full"></div>
+    <script type="module" src="./index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
