@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { useProject } from '../contexts/ProjectContext.tsx';
 import { ApiService, getMockMode } from '../services/api.ts';
 import { StorageService, generateId } from '../services/storage.ts';
@@ -25,7 +25,7 @@ export const BrandAssistant: React.FC<BrandAssistantProps> = ({ isStudioMode, to
   const apiKey = StorageService.getApiKey();
   const isMock = getMockMode() || !apiKey;
 
-  const activeProtocol = protocols.find(p => p.id === activeProtocolId);
+  const activeProtocol = useMemo(() => protocols.find(p => p.id === activeProtocolId), [protocols, activeProtocolId]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
