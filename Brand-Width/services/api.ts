@@ -236,7 +236,7 @@ export const ApiService = {
             // If we processed function calls, we must send the results back to get the final text response
             if (functionResponses.length > 0) {
                  // Fix: Wrap functionResponses in a message object as required by the SDK
-                 result = await chat.sendMessage({ message: functionResponses });
+                 result = await chat.sendMessage({ parts: functionResponses });
             }
         }
 
