@@ -84,21 +84,68 @@ export class StorageService {
   }
 
   static saveLead(projectId: string, lead: Lead) {
-    const leads = this.getLeads(projectId);
-    const existingIndex = leads.findIndex(l => l.id === lead.id);
-    if (existingIndex >= 0) {
-      leads[existingIndex] = lead;
-    } else {
-      leads.unshift(lead);
-    }
-    setStorage(`${DB_PREFIX}${projectId}_leads`, leads);
-  }
 
   static saveLeads(projectId: string, newLeads: Lead[]) {
     const leads = this.getLeads(projectId);
-    // Note: unshift multiple items in one go
     leads.unshift(...newLeads);
     setStorage(`${DB_PREFIX}${projectId}_leads`, leads);
+  }
+    const leads = this.getLeads(projectId);
+
+  static saveLeads(projectId: string, newLeads: Lead[]) {
+    const leads = this.getLeads(projectId);
+    leads.unshift(...newLeads);
+    setStorage(`${DB_PREFIX}${projectId}_leads`, leads);
+  }
+    const existingIndex = leads.findIndex(l => l.id === lead.id);
+
+  static saveLeads(projectId: string, newLeads: Lead[]) {
+    const leads = this.getLeads(projectId);
+    leads.unshift(...newLeads);
+    setStorage(`${DB_PREFIX}${projectId}_leads`, leads);
+  }
+    if (existingIndex >= 0) {
+
+  static saveLeads(projectId: string, newLeads: Lead[]) {
+    const leads = this.getLeads(projectId);
+    leads.unshift(...newLeads);
+    setStorage(`${DB_PREFIX}${projectId}_leads`, leads);
+  }
+      leads[existingIndex] = lead;
+
+  static saveLeads(projectId: string, newLeads: Lead[]) {
+    const leads = this.getLeads(projectId);
+    leads.unshift(...newLeads);
+    setStorage(`${DB_PREFIX}${projectId}_leads`, leads);
+  }
+    } else {
+
+  static saveLeads(projectId: string, newLeads: Lead[]) {
+    const leads = this.getLeads(projectId);
+    leads.unshift(...newLeads);
+    setStorage(`${DB_PREFIX}${projectId}_leads`, leads);
+  }
+      leads.unshift(lead);
+
+  static saveLeads(projectId: string, newLeads: Lead[]) {
+    const leads = this.getLeads(projectId);
+    leads.unshift(...newLeads);
+    setStorage(`${DB_PREFIX}${projectId}_leads`, leads);
+  }
+    }
+
+  static saveLeads(projectId: string, newLeads: Lead[]) {
+    const leads = this.getLeads(projectId);
+    leads.unshift(...newLeads);
+    setStorage(`${DB_PREFIX}${projectId}_leads`, leads);
+  }
+    setStorage(`${DB_PREFIX}${projectId}_leads`, leads);
+
+  static saveLeads(projectId: string, newLeads: Lead[]) {
+    const leads = this.getLeads(projectId);
+    leads.unshift(...newLeads);
+    setStorage(`${DB_PREFIX}${projectId}_leads`, leads);
+  }
   }
 
   // Drafts
@@ -134,15 +181,33 @@ export class StorageService {
   }
 
   static saveOpportunity(projectId: string, opp: OpportunityCluster) {
-      const opps = this.getOpportunities(projectId);
-      opps.unshift(opp);
-      setStorage(`${DB_PREFIX}${projectId}_opps`, opps);
-  }
 
   static saveOpportunities(projectId: string, newOpps: OpportunityCluster[]) {
+    const opps = this.getOpportunities(projectId);
+    opps.unshift(...newOpps);
+    setStorage(`${DB_PREFIX}${projectId}_opps`, opps);
+  }
       const opps = this.getOpportunities(projectId);
-      opps.unshift(...newOpps);
+
+  static saveOpportunities(projectId: string, newOpps: OpportunityCluster[]) {
+    const opps = this.getOpportunities(projectId);
+    opps.unshift(...newOpps);
+    setStorage(`${DB_PREFIX}${projectId}_opps`, opps);
+  }
+      opps.unshift(opp);
+
+  static saveOpportunities(projectId: string, newOpps: OpportunityCluster[]) {
+    const opps = this.getOpportunities(projectId);
+    opps.unshift(...newOpps);
+    setStorage(`${DB_PREFIX}${projectId}_opps`, opps);
+  }
       setStorage(`${DB_PREFIX}${projectId}_opps`, opps);
+
+  static saveOpportunities(projectId: string, newOpps: OpportunityCluster[]) {
+    const opps = this.getOpportunities(projectId);
+    opps.unshift(...newOpps);
+    setStorage(`${DB_PREFIX}${projectId}_opps`, opps);
+  }
   }
 
   // Assets
